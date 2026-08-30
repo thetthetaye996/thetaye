@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 8 English: Talking about Habits & Routines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-grad: linear-gradient(135deg, #FF416C, #FF4B2B);
+            --secondary-grad: linear-gradient(135deg, #4776E6, #8E54E9);
+            --accent-purple: #6c5ce7;
+            --accent-cyan: #00cec9;
+            --accent-pink: #fd79a8;
+            --accent-yellow: #f1c40f;
+            --accent-green: #2ecc71;
+            --dark: #2d3436;
+            --card-shadow: 0 10px 25px rgba(108, 92, 231, 0.12);
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 25px 15px;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-header {
+            background: var(--primary-grad);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 35px;
+            box-shadow: 0 10px 25px rgba(255, 65, 108, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-header h1 {
+            margin: 0;
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #f0f3f8;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--secondary-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #f0f3f8;
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sub-title {
+            font-size: 19px;
+            font-weight: 600;
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .badge-pill {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            font-size: 12px;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(232, 67, 147, 0.3);
+        }
+
+        .badge-pill.blue {
+            background: linear-gradient(135deg, #0984e3, #74b9ff);
+            box-shadow: 0 4px 10px rgba(9, 132, 227, 0.3);
+        }
+
+        .badge-pill.green {
+            background: linear-gradient(135deg, #00b894, #55efc4);
+            box-shadow: 0 4px 10px rgba(0, 184, 148, 0.3);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .img-card {
+            background-color: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            border: 2px solid #f1f2f6;
+            position: relative;
+        }
+
+        .img-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.25);
+            border-color: #a29bfe;
+        }
+
+        .img-card img {
+            width: 100%;
+            height: 145px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .img-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .img-card span {
+            display: block;
+            padding: 12px 10px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark);
+            background-color: #ffffff;
+        }
+
+        .click-hint {
+            font-size: 11px;
+            color: #6c5ce7;
+            font-weight: 500;
+            display: block;
+            margin-top: 3px;
+        }
+
+        .dialogue-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin: 20px 0;
+        }
+
+        .dialogue-card {
+            background: linear-gradient(135deg, #e3f2fd, #ffffff);
+            border-left: 5px solid #2196f3;
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.1);
+        }
+
+        .dialogue-card.green-border {
+            background: linear-gradient(135deg, #e8f5e9, #ffffff);
+            border-left-color: #4caf50;
+        }
+
+        .dialogue-card.orange-border {
+            background: linear-gradient(135deg, #fff3e0, #ffffff);
+            border-left-color: #ff9800;
+        }
+
+        .assessment-section {
+            background: linear-gradient(135deg, #ffffff, #fffdfa);
+            border: 2px solid #ffeaa7;
+            border-left: 8px solid #fdcb6e;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 35px;
+            box-shadow: 0 12px 30px rgba(253, 203, 110, 0.2);
+        }
+
+        .quiz-group {
+            background: #ffffff;
+            border: 1px solid #e1e8ed;
+            border-left: 5px solid #6c5ce7;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        .quiz-group:hover {
+            transform: translateX(4px);
+        }
+
+        .quiz-group.tf-group {
+            border-left-color: #00cec9;
+        }
+
+        .quiz-question {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 15.5px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 8px;
+        }
+
+        .quiz-options label {
+            cursor: pointer;
+            font-size: 14.5px;
+            padding: 8px 14px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #edf2f7;
+            transition: all 0.2s ease;
+            display: block;
+        }
+
+        .quiz-options label:hover {
+            background: #eef2ff;
+            border-color: #c7d2fe;
+            color: #4338ca;
+        }
+
+        .quiz-options input[type="radio"] {
+            margin-right: 8px;
+            accent-color: #6c5ce7;
+        }
+
+        .feedback {
+            margin-top: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            display: none;
+            padding: 10px 15px;
+            border-radius: 10px;
+            animation: popIn 0.3s ease;
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        .roleplay-box {
+            background: linear-gradient(135deg, #e8f8f5, #ffffff);
+            border: 2px solid #a3e4d7;
+            border-left: 6px solid #1abc9c;
+            padding: 22px;
+            border-radius: 14px;
+            margin-top: 20px;
+            box-shadow: 0 6px 15px rgba(26, 188, 156, 0.15);
+        }
+
+        .roleplay-box h4 {
+            margin-top: 0;
+            color: #16a085;
+            font-size: 18px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 20px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: left;
+        }
+
+        th {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        td {
+            background-color: #ffffff;
+            border-bottom: 1px solid #f1f2f6;
+            font-size: 14.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* MODAL POPUP STYLES */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 20px;
+            max-width: 550px;
+            width: 90%;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            position: relative;
+            animation: fadeIn 0.3s ease-out;
+            border: 3px solid #a29bfe;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #b2bec3;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #d63031;
+        }
+
+        .modal-title {
+            font-size: 22px;
+            color: var(--accent-purple);
+            margin-top: 0;
+            border-bottom: 2px solid #f0f3f8;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .modal-body p {
+            margin: 12px 0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .pros-list { color: #27ae60; }
+        .cons-list { color: #e74c3c; }
+        .rec-list { color: #2980b9; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="hero-header">
+        <h1>✨ Grade 8 English: Talking about Habits & Routines ✨</h1>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="card">
+        <h2 class="card-title">📚 Learning Content & Activities</h2>
+        
+        <div class="sub-title">
+            <span>Sports & Active Hobbies Vocabulary</span>
+            <span class="badge-pill">Interactive</span>
+        </div>
+        <p>Click on any activity card below to see details, pros, cons, and recommendations!</p>
+
+        <div class="image-grid">
+            <div class="img-card" onclick="openModal('swimming')">
+                <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=500" alt="Swimming">
+                <span>Swimming <small class="click-hint">(Click for Details)</small></span>
+            </div>
+            <div class="img-card" onclick="openModal('cycling')">
+                <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=500" alt="Cycling Race">
+                <span>Cycling <small class="click-hint">(Click for Details)</small></span>
+            </div>
+            <div class="img-card" onclick="openModal('golf')">
+                <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=500" alt="Playing Golf">
+                <span>Playing Golf <small class="click-hint">(Click for Details)</small></span>
+            </div>
+            <div class="img-card" onclick="openModal('weightlifting')">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500" alt="Weightlifting">
+                <span>Weightlifting <small class="click-hint">(Click for Details)</small></span>
+            </div>
+            <div class="img-card" onclick="openModal('diving')">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500" alt="Diving">
+                <span>Diving <small class="click-hint">(Click for Details)</small></span>
+            </div>
+            <div class="img-card" onclick="openModal('marathon')">
+                <img src="https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=500" alt="Running a Marathon">
+                <span>Running a Marathon <small class="click-hint">(Click for Details)</small></span>
+            </div>
+            <!-- EXACT ROWING IMAGE FIX (Water rowing) -->
+            <div class="img-card" onclick="openModal('rowing')">
+                <img src="https://images.unsplash.com/photo-1543731068-7e0f5beff43a?w=500" alt="Rowing">
+                <span>Rowing <small class="click-hint">(Click for Details)</small></span>
+            </div>
+            <div class="img-card" onclick="openModal('yachting')">
+                <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=500" alt="Yachting">
+                <span>Yachting <small class="click-hint">(Click for Details)</small></span>
+            </div>
+        </div>
+
+        <div class="sub-title">
+            <span>Categorization & Logic</span>
+            <span class="badge-pill blue">Vocabulary</span>
+        </div>
+        <p>Identify the "Odd Word Out" from lists containing mixed categories.</p>
+
+        <div class="image-grid">
+            <div class="img-card" onclick="openModal('food')">
+                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=500" alt="Healthy Food">
+                <span>Healthy Food Group <small class="click-hint">(Click for Details)</small></span>
+            </div>
+            <div class="img-card" onclick="openModal('gear')">
+                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=500" alt="Sports Equipment">
+                <span>Sports Equipment <small class="click-hint">(Click for Details)</small></span>
+            </div>
+            <div class="img-card" onclick="openModal('music')">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500" alt="Relaxing Hobbies">
+                <span>Relaxing Hobbies <small class="click-hint">(Click for Details)</small></span>
+            </div>
+        </div>
+
+        <div class="sub-title">
+            <span>Speaking Practice (Likes & Dislikes)</span>
+            <span class="badge-pill green">Dialogue</span>
+        </div>
+        <p>Learn how to agree or disagree with someone's preferences regarding habits.</p>
+
+        <div class="dialogue-container">
+            <div class="dialogue-card">
+                <strong>Agreement (+)</strong><br>
+                A: "I like cycling."<br>
+                B: "<strong>So do I.</strong>"
+            </div>
+            <div class="dialogue-card orange-border">
+                <strong>Disagreement</strong><br>
+                A: "I hate swimming."<br>
+                B: "<strong>Oh, really? I love it.</strong>"
+            </div>
+            <div class="dialogue-card green-border">
+                <strong>Agreement (-)</strong><br>
+                A: "I don't like weightlifting."<br>
+                B: "<strong>Neither do I.</strong>"
+            </div>
+        </div>
+    </div>
+
+    <!-- ASSESSMENT SECTION -->
+    <div class="assessment-section">
+        <h2 class="card-title" style="background: linear-gradient(135deg, #d35400, #e67e22); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">📝 Student Assessment Tasks</h2>
+        
+        <!-- TASK 1: MULTIPLE CHOICE (5 QUESTIONS WITH AUTO CONFIRM) -->
+        <div class="sub-title">
+            <span>Part A: Multiple Choice Questions</span>
+            <span class="badge-pill">5 Questions</span>
+        </div>
+        <p><em>Select an option to instantly check if your answer is correct.</em></p>
+        
+        <div class="quiz-group">
+            <div class="quiz-question">1. Which water sport involves moving a boat using oars?</div>
+            <div class="quiz-options">
+                <label><input type="radio" name="mcq1" onclick="checkAnswer('mcq1', 'B', 'mcq1-fb')"> A) Marathon</label>
+                <label><input type="radio" name="mcq1" onclick="checkAnswer('mcq1', 'B', 'mcq1-fb')"> B) Rowing</label>
+                <label><input type="radio" name="mcq1" onclick="checkAnswer('mcq1', 'B', 'mcq1-fb')"> C) Weightlifting</label>
+            </div>
+            <div id="mcq1-fb" class="feedback"></div>
+        </div>
+
+        <div class="quiz-group">
+            <div class="quiz-question">2. A: "I like going cycling on Sundays." <br> B agrees with A. What should B say?</div>
+            <div class="quiz-options">
+                <label><input type="radio" name="mcq2" onclick="checkAnswer('mcq2', 'A', 'mcq2-fb')"> A) So do I.</label>
+                <label><input type="radio" name="mcq2" onclick="checkAnswer('mcq2', 'A', 'mcq2-fb')"> B) Neither do I.</label>
+                <label><input type="radio" name="mcq2" onclick="checkAnswer('mcq2', 'A', 'mcq2-fb')"> C) Yes, I am.</label>
+            </div>
+            <div id="mcq2-fb" class="feedback"></div>
+        </div>
+
+        <div class="quiz-group">
+            <div class="quiz-question">3. A: "I don't like weightlifting." <br> B also dislikes it. What is the correct response?</div>
+            <div class="quiz-options">
+                <label><input type="radio" name="mcq3" onclick="checkAnswer('mcq3', 'C', 'mcq3-fb')"> A) So do I.</label>
+                <label><input type="radio" name="mcq3" onclick="checkAnswer('mcq3', 'C', 'mcq3-fb')"> B) I like it.</label>
+                <label><input type="radio" name="mcq3" onclick="checkAnswer('mcq3', 'C', 'mcq3-fb')"> C) Neither do I.</label>
+            </div>
+            <div id="mcq3-fb" class="feedback"></div>
+        </div>
+
+        <div class="quiz-group">
+            <div class="quiz-question">4. Which of the following is the "Odd Word Out" in healthy habits?</div>
+            <div class="quiz-options">
+                <label><input type="radio" name="mcq4" onclick="checkAnswer('mcq4', 'B', 'mcq4-fb')"> A) Swimming</label>
+                <label><input type="radio" name="mcq4" onclick="checkAnswer('mcq4', 'B', 'mcq4-fb')"> B) Junk Food</label>
+                <label><input type="radio" name="mcq4" onclick="checkAnswer('mcq4', 'B', 'mcq4-fb')"> C) Cycling</label>
+            </div>
+            <div id="mcq4-fb" class="feedback"></div>
+        </div>
+
+        <div class="quiz-group">
+            <div class="quiz-question">5. What safety gear is essential when you go cycling?</div>
+            <div class="quiz-options">
+                <label><input type="radio" name="mcq5" onclick="checkAnswer('mcq5', 'C', 'mcq5-fb')"> A) Oars</label>
+                <label><input type="radio" name="mcq5" onclick="checkAnswer('mcq5', 'C', 'mcq5-fb')"> B) Goggles</label>
+                <label><input type="radio" name="mcq5" onclick="checkAnswer('mcq5', 'C', 'mcq5-fb')"> C) Helmet</label>
+            </div>
+            <div id="mcq5-fb" class="feedback"></div>
+        </div>
+
+        <!-- TASK 2: TRUE / FALSE (5 QUESTIONS WITH AUTO CONFIRM) -->
+        <div class="sub-title" style="margin-top: 35px;">
+            <span>Part B: True / False Questions</span>
+            <span class="badge-pill blue">5 Questions</span>
+        </div>
+        
+        <div class="quiz-group tf-group">
+            <div class="quiz-question">1. Running a marathon requires stamina and long-distance running.</div>
+            <div class="quiz-options">
+                <label><input type="radio" name="tf1" onclick="checkAnswer('tf1', 'True', 'tf1-fb')"> True</label>
+                <label><input type="radio" name="tf1" onclick="checkAnswer('tf1', 'True', 'tf1-fb')"> False</label>
+            </div>
+            <div id="tf1-fb" class="feedback"></div>
+        </div>
+
+        <div class="quiz-group tf-group">
+            <div class="quiz-question">2. We use "Neither do I" to agree with a positive statement like "I love swimming."</div>
+            <div class="quiz-options">
+                <label><input type="radio" name="tf2" onclick="checkAnswer('tf2', 'False', 'tf2-fb')"> True</label>
+                <label><input type="radio" name="tf2" onclick="checkAnswer('tf2', 'False', 'tf2-fb')"> False</label>
+            </div>
+            <div id="tf2-fb" class="feedback"></div>
+        </div>
+
+        <div class="quiz-group tf-group">
+            <div class="quiz-question">3. Rowing is performed on a bicycle.</div>
+            <div class="quiz-options">
+                <label><input type="radio" name="tf3" onclick="checkAnswer('tf3', 'False', 'tf3-fb')"> True</label>
+                <label><input type="radio" name="tf3" onclick="checkAnswer('tf3', 'False', 'tf3-fb')"> False</label>
+            </div>
+            <div id="tf3-fb" class="feedback"></div>
+        </div>
+
+        <div class="quiz-group tf-group">
+            <div class="quiz-question">4. Weightlifting helps build muscle strength and bone density.</div>
+            <div class="quiz-options">
+                <label><input type="radio" name="tf4" onclick="checkAnswer('tf4', 'True', 'tf4-fb')"> True</label>
+                <label><input type="radio" name="tf4" onclick="checkAnswer('tf4', 'True', 'tf4-fb')"> False</label>
+            </div>
+            <div id="tf4-fb" class="feedback"></div>
+        </div>
+
+        <div class="quiz-group tf-group">
+            <div class="quiz-question">5. "So do I" is used to show agreement with someone's preference or habit.</div>
+            <div class="quiz-options">
+                <label><input type="radio" name="tf5" onclick="checkAnswer('tf5', 'True', 'tf5-fb')"> True</label>
+                <label><input type="radio" name="tf5" onclick="checkAnswer('tf5', 'True', 'tf5-fb')"> False</label>
+            </div>
+            <div id="tf5-fb" class="feedback"></div>
+        </div>
+
+        <!-- TASK 3: PAIR ROLE-PLAY ACTIVITY -->
+        <div class="sub-title" style="margin-top: 35px;">
+            <span>Part C: Pair Role-Play Activity</span>
+            <span class="badge-pill green">Speaking</span>
+        </div>
+        
+        <div class="roleplay-box">
+            <h4>🎭 Activity: "Finding Common Hobbies"</h4>
+            <p><strong>Instructions:</strong> Work in pairs (Student A and Student B). Practice speaking about your habits and hobbies using <em>"So do I"</em> or <em>"Neither do I"</em>.</p>
+            
+            <p><strong>Example Dialogue Prompt:</strong></p>
+            <ul>
+                <li><strong>Student A:</strong> "I usually go cycling on weekends. What about you?"</li>
+                <li><strong>Student B:</strong> "<strong>So do I!</strong> I also like swimming."</li>
+                <li><strong>Student A:</strong> "Oh, I don't like swimming."</li>
+                <li><strong>Student B:</strong> "<strong>Neither do I</strong>, actually! I prefer playing golf."</li>
+            </ul>
+        </div>
+
+        <h3 class="sub-title" style="margin-top: 30px;">📊 Grading Criteria</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Evaluation Criteria</th>
+                    <th>What We Check</th>
+                    <th>Score Weight</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Vocabulary Mastery</td>
+                    <td>Correct identification of sports and hobbies terms</td>
+                    <td>30%</td>
+                </tr>
+                <tr>
+                    <td>Grammar Accuracy</td>
+                    <td>Proper use of 'So do I' / 'Neither do I' in responses</td>
+                    <td>40%</td>
+                </tr>
+                <tr>
+                    <td>Role-Play Fluency</td>
+                    <td>Confidence, interaction, and pronunciation during pair work</td>
+                    <td>30%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- POPUP MODAL CONTAINER -->
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle" class="modal-title">Activity Details</h2>
+        <div id="modalBody" class="modal-body">
+            <!-- Content will dynamically insert here -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // AUTO CHECK QUIZ FUNCTION
+    function checkAnswer(groupName, correctAnswer, feedbackId) {
+        const options = document.getElementsByName(groupName);
+        const feedback = document.getElementById(feedbackId);
+        let selectedValue = "";
+
+        for (const option of options) {
+            if (option.checked) {
+                // Get answer letter or text from label
+                selectedValue = option.parentNode.textContent.trim().charAt(0);
+                if(groupName.startsWith('tf')) {
+                    selectedValue = option.parentNode.textContent.trim();
+                }
+                break;
+            }
+        }
+
+        if (selectedValue === correctAnswer) {
+            feedback.className = "feedback correct";
+            feedback.innerHTML = "🎉 အဖြေမှန်ပါသည်။ (Correct Answer!)";
+        } else {
+            feedback.className = "feedback incorrect";
+            feedback.innerHTML = "❌ အဖြေမှားနေပါသည်။ အဖြေမှန်မှာ " + correctAnswer + " ဖြစ်ပါသည်။ (Incorrect, try again!)";
+        }
+    }
+
+    const detailsData = {
+        swimming: {
+            title: "🏊‍♂️ Swimming (ရေကူးခြင်း)",
+            overview: "ရေကူးခြင်းသည် တစ်ကိုယ်လုံးရှိ ကြွက်သားများကို လှုပ်ရှားစေသည့် ရေပြင်အားကစားနည်း ဖြစ်သည်။",
+            pros: "တစ်ကိုယ်လုံး ကြွက်သား သန်မာစေခြင်း၊ အဆုတ်နှင့် နှလုံးကျန်းမာရေး တိုးတက်စေခြင်း။",
+            cons: "ရေကူးကန် သို့မဟုတ် ရေပြင်ရှိရန် လိုအပ်ခြင်း၊ ရေကူးမကျွမ်းကျင်ပါက အန္တရာယ်ရှိနိုင်ခြင်း။",
+            rec: "အခြေခံ နည်းစနစ်များကို နည်းပြနှင့် စနစ်တကျ သင်ယူပါ၊ အကာအကွယ်ပစ္စည်းများ အသုံးပြုပါ။"
+        },
+        cycling: {
+            title: "🚴‍♀️ Cycling (စက်ဘီးစီးခြင်း)",
+            overview: "စက်ဘီးစီးခြင်းသည် လေကောင်းလေသန့်ရရှိစေပြီး ခြေသလုံးနှင့် ပေါင်ကြွက်သားများကို အဓိက သန်မာစေသည့် အားကစားဖြစ်သည်။",
+            pros: "နှလုံးနှင့် အသက်ရှူလမ်းကြောင်း ကျန်းမာစေခြင်း၊ စိတ်ဖိစီးမှု လျှော့ချပေးခြင်း။",
+            cons: "ယာဉ်ကြောပိတ်ဆို့သည့် လမ်းများတွင် အန္တရာယ်ရှိနိုင်ခြင်း၊ ရာသီဥတုပေါ် မူတည်ရခြင်း။",
+            rec: "ဦးထုပ် (Helmet) အမြဲဝတ်ဆင်ပါ၊ သီးသန့် စက်ဘီးစီးလမ်းကြောင်းများကို ဦးစားပေး အသုံးပြုပါ။"
+        },
+        golf: {
+            title: "🏌️‍♂️ Playing Golf (ဂေါက်သီးရိုက်ခြင်း)",
+            overview: "အာရုံစိုက်မှုနှင့် စိတ်တည်ငြိမ်မှုကို အဓိကအသုံးပြုရသည့် အားကစားနည်းဖြစ်သည်။",
+            pros: "အာရုံစူးစိုက်မှု တိုးတက်စေခြင်း၊ လမ်းလျှောက်လေ့ကျင့်ခန်း ရရှိခြင်း။",
+            cons: "ကိရိယာတန်ဆာပလာနှင့် ကွင်းကြေး ကုန်ကျစရိတ် မြင့်မားခြင်း။",
+            rec: "ဂေါက်ကလပ် ရိုက်နည်း အခြေခံ posture ကို ပုံမှန် လေ့ကျင့်ပါ။"
+        },
+        weightlifting: {
+            title: "🏋️‍♂️ Weightlifting (အလေးမခြင်း)",
+            overview: "ကြွက်သားထုထည်နှင့် အရိုးအဆစ် သန်မာရေးအတွက် အလေးချိန်များ မတင်လေ့ကျင့်သည့် နည်းလမ်းဖြစ်သည်။",
+            pros: "အရိုးနှင့် ကြွက်သား ထုထည်ကို သန်မာစေခြင်း၊ ကယ်လိုရီလောင်ကျွမ်းမှု မြင့်မားခြင်း။",
+            cons: "နည်းစနစ် မှားယွင်းပါက ခါးနှင့် အဆစ်အမြစ်များ ဒဏ်ရာရလွယ်ခြင်း။",
+            rec: "ပေါ့ပါးသော အလေးများမှ စတင်ပါ၊ နည်းပြ၏ လမ်းညွှန်မှုကို ခံယူပါ။"
+        },
+        diving: {
+            title: "🥽 Diving (ရေငုပ်ခြင်း)",
+            overview: "ရေအောက်ကမ္ဘာကို လေ့လာစူးစမ်းနိုင်သည့် အားကစားနှင့် ဝါသနာတစ်ခု ဖြစ်သည်။",
+            pros: "စိတ်လှုပ်ရှားမှုနှင့် အတွေ့အကြုံသစ် ရရှိခြင်း၊ ရေအောက်သဘာဝကို ခံစားနိုင်ခြင်း။",
+            cons: "သီးသန့် သင်တန်းနှင့် လိုင်စင် လိုအပ်ခြင်း၊ အသက်ရှူကိရိယာ ပျက်စီးပါက အန္တရာယ်ရှိခြင်း။",
+            rec: "ကျွမ်းကျင်နည်းပြများနှင့်သာ အတူတူ ငုပ်ပါ၊ လေဖိအားဒဏ် ခံနိုင်စေရန် စနစ်တကျ လေ့ကျင့်ပါ။"
+        },
+        marathon: {
+            title: "🏃‍♂️ Running a Marathon (မာရသွန်ပြေးခြင်း)",
+            overview: "အကွာအဝေး အဝေးကြီးကို ဇွဲရှိရှိ ပြေးရသည့် စက်ကြံ့ခိုင်မှုဆိုင်ရာ အားကစားဖြစ်သည်။",
+            pros: "ဇွဲရှိမှုနှင့် စိတ်ဓာတ်ကြံ့ခိုင်မှုကို တည်ဆောက်ပေးခြင်း၊ စတေမီနာ (Stamina) အလွန်တိုးတက်စေခြင်း။",
+            cons: "ဒူးနှင့် ခြေကျင်းဝတ်များကို ဒဏ်ပိစေနိုင်ခြင်း။",
+            rec: "ပြေးဖိနပ်ကောင်းကောင်း သုံးပါ၊ အကွာအဝေးကို တဖြည်းဖြည်းချင်း တိုးမြှင့်ပြေးပါ။"
+        },
+        rowing: {
+            title: "🚣‍♂️ Rowing (လှေလှော်ခြင်း)",
+            overview: "အသင်းအဖွဲ့လိုက် သို့မဟုတ် တစ်ဦးတည်း ရေပြင်ပေါ်တွင် လှေလှော်ရသည့် အားကစားဖြစ်သည်။",
+            pros: "လက်၊ ခါးနှင့် ပခုံးကြွက်သားများကို သန်မာစေခြင်း၊ အသင်းအဖွဲ့စိတ်ဓာတ် တိုးတက်စေခြင်း။",
+            cons: "ဟန်ချက်ထိန်းရန် ခက်ခဲခြင်း၊ လှေနှင့် အလှော်ခတ် လိုအပ်ခြင်း။",
+            rec: "ညီညာသော အလှော်ခတ်စနစ်နှင့် ခန္ဓာကိုယ် ဟန်ချက်ထိန်းနည်းကို လေ့ကျင့်ပါ။"
+        },
+        yachting: {
+            title: "⛵ Yachting (ရွက်လှေလွှင့်ခြင်း)",
+            overview: "လေတိုက်နှုန်းနှင့် ရေလှိုင်းကို အသုံးချ၍ ရွက်လှေ မောင်းနှင်သည့် အားကစားဖြစ်သည်။",
+            pros: "သဘာဝတရား၏ သဘောတရားကို နားလည်စေခြင်း၊ ဆုံးဖြတ်ချက် မြန်ဆန်စေခြင်း။",
+            cons: "ကုန်ကျစရိတ်များခြင်း၊ လေထုနှင့် ရာသီဥတု ပြောင်းလဲမှုကို ဂရုစိုက်ရခြင်း။",
+            rec: "အသက်ကယ်အင်္ကျီ အမြဲဝတ်ဆင်ပါ၊ မိုးလေဝသကို ကြိုတင်စစ်ဆေးပါ။"
+        },
+        food: {
+            title: "🥗 Healthy Food Group (ကျန်းမာရေးနှင့် ညီညွတ်သော အစားအစာများ)",
+            overview: "ခန္ဓာကိုယ် ဖွံ့ဖြိုးတိုးတက်ရန်နှင့် အားကစားပြုလုပ်ရာတွင် စွမ်းအင်ရရှိရန် လိုအပ်သော အဟာရဓာတ်များ ပါဝင်သည့် အုပ်စုဖြစ်သည်။",
+            pros: "ရောဂါဘယ ကာကွယ်ပေးခြင်း၊ လန်းဆန်းတက်ကြွစေခြင်း၊ ကိုယ်အလေးချိန် စနစ်တကျ ထိန်းသိမ်းနိုင်ခြင်း။",
+            cons: "အဆင်သင့်စား အစားအစာများထက် ပြင်ဆင်ရချိန် ပိုမို ကြာမြင့်ခြင်း။",
+            rec: "သီးနှံ၊ ဟင်းသီးဟင်းရွက်နှင့် ပရိုတင်း အချိုးအစား ညီညွတ်စွာ နေ့စဉ် စားသုံးပါ။"
+        },
+        gear: {
+            title: "👟 Sports Equipment (အားကစား ပစ္စည်းကိရိယာများ)",
+            overview: "အားကစားနှင့် လေ့ကျင့်ခန်းများ ပြုလုပ်ရာတွင် ဘေးအန္တရာယ် ကင်းရှင်းစေရန်နှင့် စွမ်းဆောင်ရည် တိုးတက်စေရန် အသုံးပြုသော ကိရိယာများ ဖြစ်သည်။",
+            pros: "ထိခိုက်ဒဏ်ရာ ရရှိမှုကို နည်းပါးစေခြင်း၊ ကစားရသည်မှာ ပိုမို ထိရောက်ပြီး စနစ်ကျခြင်း။",
+            cons: "ပစ္စည်းအရည်အသွေး ပေါ်မူတည်၍ ကုန်ကျစရိတ် ကွဲပြားခြင်း။",
+            rec: "မိမိပြုလုပ်မည့် အားကစားအမျိုးအစားနှင့် သင့်တော်သော အရွယ်အစားနှင့် အကာအကွယ်များကို သေချာ ရွေးချယ်ပါ။"
+        },
+        music: {
+            title: "🎵 Relaxing Hobbies (စိတ်အပန်းဖြေ ဝါသနာများ)",
+            overview: "ဂီတနားထောင်ခြင်း၊ စာဖတ်ခြင်း အစရှိသည့် စိတ်ကို အေးချမ်းစေသော ဝါသနာများ ဖြစ်သည်။",
+            pros: "စိတ်ဖိစီးမှုနှင့် ပင်ပန်းနွမ်းနယ်မှုများကို အမြန်ဆုံး လျှော့ချပေးနိုင်ခြင်း၊ ဦးနှောက်ကို အနားရစေခြင်း။",
+            cons: "ခန္ဓာကိုယ် လှုပ်ရှားမှု နည်းပါးသဖြင့် ကိုယ်လက်လှုပ်ရှားမှုနှင့် မျှတအောင် ယှဉ်တွဲလုပ်ဆောင်ရန် လိုအပ်ခြင်း။",
+            rec: "တစ်နေ့လျှင် မိနစ် ၂၀-၃၀ ခန့် သီးသန့် အနားယူချိန်ပေး၍ ပြုလုပ်ပေးပါ။"
+        }
+    };
+
+    
+</script>
+
+</body>
+</html>
